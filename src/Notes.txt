@@ -1,0 +1,54 @@
+Gherkin Language
+    Given - pre-condition
+    When - actions we need to perform
+    And - supporting tag
+    Then - expected results
+
+Recap
+*****
+What is a framework?
+--an organized structure of folders and packages which allows us to write clean and maintainable code
+
+build management tool
+--maven
+
+pom.xml is the main configuration file in a maven project
+
+main - used to write the code for development
+test - used to write the code for testing the application
+    --java
+        --for tech/coding
+    --resources
+        --for non-technical/non-coding we use resources
+
+cucumber supports BDD(Behavior Driven Development)
+    --uses gherkin language(plain english) to write the scenarios
+
+Scenario
+    --it is a test case
+    Given -- pre-condition
+    When -- actions
+    And -- supporting tag
+    Then -- expected results
+
+User Story 12345 - Employee Search
+    Scenario - search employee by id
+        Given User is navigated to HRMS Application
+        When User valid admin credentials
+        And User clicks on login button
+        And User navigates to Employee List page
+        When User enters valid employee id
+        And clicks on search button
+        Then User is able to see Employee Information
+
+    Scenario - search employee by name
+        Given User is navigated to HRMS Application
+        When User valid admin credentials
+        And User clicks on login button
+        And User navigates to Employee List page
+        When User enters valid employee name
+        And clicks on search button
+        Then User is able to see Employee Information
+
+file where we write BDD scenarios if feature file
+this file has .feature extension
