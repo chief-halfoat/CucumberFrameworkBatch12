@@ -4,6 +4,8 @@ Gherkin Language
     And - supporting tag
     Then - expected results
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 Recap
 *****
 What is a framework?
@@ -52,3 +54,15 @@ User Story 12345 - Employee Search
 
 file where we write BDD scenarios if feature file
 this file has .feature extension
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Class 3
+Recap -
+
+We use feature file to write our scenarios
+    ex - search employee by id
+         search employee by name
+
+In feature file we write scenarios using gherkin language
+    --Given/When/And/Then/Scenario/Feature
+After feature file, we need to create step definitions
