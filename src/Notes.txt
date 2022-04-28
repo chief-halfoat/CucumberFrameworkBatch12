@@ -66,3 +66,19 @@ We use feature file to write our scenarios
 In feature file we write scenarios using gherkin language
     --Given/When/And/Then/Scenario/Feature
 After feature file, we need to create step definitions
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CLass 4
+Recap -
+Common methods class in our framework is used to write all the methods we will be using in majority of scenarios (Code reusabilty)
+
+sendText, method, click,
+
+//Common Methods use overloading polymorphism with user created classes
+//Common Method extensions use inheritance
+
+Constants class
+    We added waits (implicit & explicit) and test data path
+
+POM vs pom.xml
+Page Object Model is a design model
