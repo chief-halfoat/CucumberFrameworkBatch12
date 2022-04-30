@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utils.CommonMethods;
 
 public class LoginPage extends CommonMethods {
+    //object repository
     @FindBy(id="txtUsername")
     public WebElement usernameTextbox;
 
@@ -14,6 +15,9 @@ public class LoginPage extends CommonMethods {
 
     @FindBy(id="btnLogin")
     public WebElement loginBtn;
+
+    @FindBy(id = "spanMessage")
+    public WebElement spanMessage;
 
     public LoginPage(){
         PageFactory.initElements(driver,this);

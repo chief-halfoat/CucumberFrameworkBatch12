@@ -68,7 +68,7 @@ In feature file we write scenarios using gherkin language
 After feature file, we need to create step definitions
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-CLass 4
+Class 4
 Recap -
 Common methods class in our framework is used to write all the methods we will be using in majority of scenarios (Code reusabilty)
 
@@ -82,3 +82,10 @@ Constants class
 
 POM vs pom.xml
 Page Object Model is a design model
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Class 5
+Recap -
+
+Creating multiple steps classes for multiple feature files
+Page Object Model design pattern

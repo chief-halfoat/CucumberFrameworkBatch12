@@ -24,8 +24,8 @@ public class EmployeeSearchSteps extends CommonMethods {
 
         sendText(login.usernameTextbox, ConfigReader.getPropertyValue("username"));
         sendText(login.passwordTextbox, ConfigReader.getPropertyValue("password"));
-        click(login.loginBtn);
-        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
+//        click(login.loginBtn);
+//        driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
     }
 
@@ -48,10 +48,7 @@ public class EmployeeSearchSteps extends CommonMethods {
 
     @When("user clicks on search button")
     public void user_clicks_on_search_button() {
-
-        WebElement searchButton = driver.findElement(By.id("searchBtn"));
-        click(searchButton);
-
+        click(employeeSearchPage.searchButton);
     }
 
     @Then("user is able to see employee information")
