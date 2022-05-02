@@ -89,3 +89,8 @@ Recap -
 
 Creating multiple steps classes for multiple feature files
 Page Object Model design pattern
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Class 6
+Recap -
+

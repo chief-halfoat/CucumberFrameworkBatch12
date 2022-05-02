@@ -54,7 +54,6 @@ public class EmployeeSearchSteps extends CommonMethods {
     @Then("user is able to see employee information")
     public void user_is_able_to_see_employee_information() {
         System.out.println("Result displayed");
-        tearDown();
     }
 
     @When("user enters valid employee name")
