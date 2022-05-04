@@ -56,13 +56,15 @@ public class AddEmployeeSteps extends CommonMethods {
             String firstNameValue = employee.get("firstName");
             String middleNameValue = employee.get("middleName");
             String lastNameValue = employee.get("lastName");
-            System.out.println(firstNameValue+" "+middleNameValue+" "+lastNameValue);
 
             sendText(addEmployeePage.firstNameField, firstNameValue);
             sendText(addEmployeePage.middleNameField, middleNameValue);
             sendText(addEmployeePage.lastNameField, lastNameValue);
             click(addEmployeePage.saveBtn);
-            //verification of adding an employee is HW
+            String fullNameValue = firstNameValue+" "+middleNameValue+" "+lastNameValue;
+            if(fullNameValue.equals(employeeInformationPage.employeeName.getText())) {
+                System.out.println(employeeInformationPage.employeeName.getText() + " was added to the database");
+            }
             click(employeeSearchPage.addEmployeeOption);
         }
     }

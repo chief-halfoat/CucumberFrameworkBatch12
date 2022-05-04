@@ -39,4 +39,3 @@ Feature: Adding the employees in HRMS Application
       | Steven    | Harold     | Gutenberg |
       | Laura     | Jane       | Grace     |
 
-
