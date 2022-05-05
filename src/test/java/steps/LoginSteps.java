@@ -11,6 +11,7 @@ import utils.CommonMethods;
 import utils.ConfigReader;
 import utils.Constants;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -92,9 +93,7 @@ public class LoginSteps extends CommonMethods {
             String password = login.get("password");
             String expectedMsg = login.get("expectedMessage");
 
-
             if(username==null){
-
             } else if(username.equals("valid")){
                 username = ConfigReader.getPropertyValue("username");
             } else if (username.equals("invalid")){
@@ -102,7 +101,6 @@ public class LoginSteps extends CommonMethods {
             }
 
             if(password==null){
-
             } else if(password.equals("valid")){
                 password = ConfigReader.getPropertyValue("password");
             } else if (password.equals("invalid")){

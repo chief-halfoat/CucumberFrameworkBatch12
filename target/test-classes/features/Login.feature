@@ -55,4 +55,5 @@ Feature: Validation of login credentials
       |valid   |invalid |Invalid credentials|
       |invalid |valid   |Invalid credentials|
       |        |valid   |Username cannot be empty|
-      |valid   |           |Password cannot be empty|
+      |valid   |        |Password cannot be empty|
+      Then verify the login  error message
