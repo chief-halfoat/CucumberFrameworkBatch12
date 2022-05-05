@@ -94,3 +94,15 @@ Page Object Model design pattern
 Class 6
 Recap -
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Class 7
+Recap -
+
+Hooks - to write the pre- & post-conditions of the project
+            @before & @after
+        we always write hooks under the steps package
+
+Data driven testing
+    Using examples table & scenario outline
+    Using data table
+
