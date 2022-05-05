@@ -30,7 +30,7 @@ Feature: Adding the employees in HRMS Application
       | Steven    | Harold     | Gutenberg |
       | Laura     | Jane       | Grace     |
 
-  @test @datatable
+  @datatable
   Scenario: Add employee using Data Table
     When user provides multiple employee's data and verify they are added
       | firstName | middleName | lastName  |

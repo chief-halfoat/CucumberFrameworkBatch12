@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         //glue is where we find the implementations of gherkin steps
         //we provide the path of the package to get all the step definitions
         glue = "steps",
-        dryRun = true,
+        dryRun = false,
         monochrome = true,
-        tags = "@dashboard"
+        tags = "@dataTableTest"
 )
 
 public class RunnerClass {
