@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         dryRun = false,
         monochrome = true,
-        tags = "@dataTableTest"
+        tags = "@scenarioOutline"
 )
 
 public class RunnerClass {

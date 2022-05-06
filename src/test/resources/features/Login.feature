@@ -57,3 +57,15 @@ Feature: Validation of login credentials
       |        |valid   |Username cannot be empty|
       |valid   |        |Password cannot be empty|
       Then verify the login  error message
+
+      @test @login @scenarioOutline
+        Scenario Outline: User Fails Login
+        When user provides invalid or blank "<username>" and "<password>"
+        And user clicks on login button
+        Then verify the login the actual error message with the "<expectedMessage>"
+        Examples:
+        |username|password|expectedMessage|
+        |valid   |invalid |Invalid credentials|
+        |invalid |valid   |Invalid credentials|
+        |        |valid   |Username cannot be empty|
+        |valid   |        |Password cannot be empty|

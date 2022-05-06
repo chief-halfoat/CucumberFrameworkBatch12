@@ -106,3 +106,6 @@ Data driven testing
     Using examples table & scenario outline
     Using data table
 
+Maven repo, dependencies, config.properties, constants, config reader, pages, runners, hooks, testdata directory
+features
+

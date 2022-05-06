@@ -129,5 +129,46 @@ public class LoginSteps extends CommonMethods {
             driver.navigate().refresh();
         }
     }
+    @Then("verify the login  error message")
+    public void verify_the_login_error_message() {
+        System.out.println("Placeholder");
+    }
+
+    @When("user provides invalid or blank {string} and {string}")
+    public void user_provides_invalid_or_blank_and(String username, String password) throws InterruptedException {
+
+        if(username==null){
+        } else if(username.equals("valid")){
+            username=ConfigReader.getPropertyValue("username");
+        } else if(username.equals("invalid")){
+            username=ConfigReader.getPropertyValue("invalidUsername");
+        }
+        if(password==null){
+        } else if (password.equals("valid")){
+            password=ConfigReader.getPropertyValue("password");
+        } else if (password.equals("invalid")){
+            password=ConfigReader.getPropertyValue("invalidPassword");
+        }
+        if(username==null){
+            LoginPage.login.usernameTextbox.clear();
+            sendText(LoginPage.login.passwordTextbox, password);
+//            click(LoginPage.login.loginBtn);
+        } else if (password==null){
+            sendText(LoginPage.login.usernameTextbox, username);
+            LoginPage.login.passwordTextbox.clear();
+//            click(LoginPage.login.loginBtn);
+        } else {
+            sendText(LoginPage.login.usernameTextbox, username);
+            sendText(LoginPage.login.passwordTextbox, password);
+//            click(LoginPage.login.loginBtn);
+        }
+
+    }
+
+    @Then("verify the login the actual error message with the {string}")
+    public void verify_the_login_the_actual_error_message_with_the(String expectedMessage) {
+        Assert.assertEquals(expectedMessage,login.spanMessage.getText());
+    }
+
 
 }
