@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         monochrome = true,
         tags = "@sprint12",
-        plugin = {"html:target/cucumber.html","pretty","json:target/cucumber.json", "rerun:target/text/failed.txt"}
+        plugin = {"html:target/cucumber.html","pretty","json:target/cucumber.json", "rerun:target/failed.txt"}
 )
 
 public class RunnerClass {

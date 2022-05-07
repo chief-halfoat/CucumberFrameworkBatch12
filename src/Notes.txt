@@ -109,3 +109,6 @@ Data driven testing
 Maven repo, dependencies, config.properties, constants, config reader, pages, runners, hooks, testdata directory
 features
 
+to clean the project - mvn clean from cmd
+to run the project - mvn test from cmd
+override the tag from cmd - mvn clean verify -Dcucumber.filter.tags="@XXXXXXXXX"
