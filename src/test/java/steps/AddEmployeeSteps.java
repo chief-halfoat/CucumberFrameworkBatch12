@@ -97,7 +97,6 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployeePage.createPassword, mapNewEmp.get("Password"));
             sendText(addEmployeePage.confirmPassword, mapNewEmp.get("Password"));
             click(addEmployeePage.saveBtn);
-
             Thread.sleep(3000);
             click(employeeSearchPage.empListOption);
             sendText(employeeSearchPage.idField, empIdValue);
