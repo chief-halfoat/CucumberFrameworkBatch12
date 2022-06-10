@@ -1,20 +1,29 @@
 package steps;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AddEmployeePage;
 import utils.CommonMethods;
 import utils.Constants;
+import utils.DBUtils;
 import utils.ExcelReader;
 
+import java.sql.SQLOutput;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
+    String empId;
+    String firstName;
+    String dbFirstName;
+    String dbEmpId;
+
     @When("user clicks on pim option")
     public void user_clicks_on_pim_option() {
         click(employeeSearchPage.pimOption);
@@ -113,5 +122,27 @@ public class AddEmployeeSteps extends CommonMethods {
             click(employeeSearchPage.addEmployeeOption);
             Thread.sleep(2000);
         }
+    }
+
+    @And("user grabs the employee id")
+    public void userGrabsTheEmployeeId() {
+        empId=addEmployeePage.employeeId.getAttribute("value");
+        firstName=addEmployeePage.firstNameField.getAttribute("value");
+    }
+
+    @And("user queries the database for same employee id")
+    public void userQueriesTheDatabaseForSameEmployeeId() {
+        String query = "select * from hs_hr_employees where employee_id='"+empId+"'";
+        dbFirstName = DBUtils.getDataFromDB(query).get(0).get("emp_firstname");
+        dbEmpId = DBUtils.getDataFromDB(query).get(0).get("employee_id");
+    }
+
+    @Then("user verifies the employee was added")
+    public void userVerifiesTheEmployeeWasAdded() {
+        System.out.println("firstName from Front End : "+firstName);
+        System.out.println("firstName from Database : "+dbFirstName);
+        System.out.println("employee_id from Front End : "+empId);
+        System.out.println("employee_id from Database : "+dbEmpId);
+        Assert.assertEquals(firstName,dbFirstName);
     }
 }
