@@ -133,8 +133,9 @@ public class AddEmployeeSteps extends CommonMethods {
     @And("user queries the database for same employee id")
     public void userQueriesTheDatabaseForSameEmployeeId() {
         String query = "select * from hs_hr_employees where employee_id='"+empId+"'";
-        dbFirstName = DBUtils.getDataFromDB(query).get(0).get("emp_firstname");
-        dbEmpId = DBUtils.getDataFromDB(query).get(0).get("employee_id");
+        List<Map<String,String>> tableData = DBUtils.getDataFromDB(query);
+        dbFirstName = tableData.get(0).get("emp_firstname");
+        dbEmpId = tableData.get(0).get("employee_id");
     }
 
     @Then("user verifies the employee was added")

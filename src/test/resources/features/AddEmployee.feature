@@ -45,7 +45,7 @@ Feature: Adding the employees in HRMS Application
 
       @ETETest1
   Scenario: Adding one employee using Cucumber feature file
-    And user enters "Harry" "S" "Truman"
+    And user enters "Benjamin" "Jacob" "Grimm"
     And user grabs the employee id
     And user clicks on save button
     Then employee is added successfully
