@@ -20,3 +20,19 @@ Feature: This feature covers all the API related scenario
       And the retrieved data at "employee" object matches the data used to create the employee having employee id "employee.employee_id"
       |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
       |Wanda        |Maximoff    |W              |Female    |1987-06-11  |Probation |Avenger      |
+
+  @jsonPayload
+  Scenario: Adding an employee using JSON object
+    Given a request is prepared to create an employee via JSON object
+    When a POST call is made to create an employee
+    Then the status code for the created employee is 201
+    And the employee created contains key "Message" and value "Employee Created"
+    And the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
+
+  @dynamic
+  Scenario: Adding an employee using a dynamic scenario
+    Given a request is prepared to create an employee via dynamic payload "Jerome","Bettis","Abram","M","1972-02-16","Retired","Running Back"
+    When a POST call is made to create an employee
+    Then the status code for the created employee is 201
+    And the employee created contains key "Message" and value "Employee Created"
+    And the employee id "Employee.employee_id" is stored as a global variable to be used for other calls

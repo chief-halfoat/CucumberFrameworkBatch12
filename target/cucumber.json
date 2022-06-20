@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1750820900,
+              "duration": 1429791300,
               "status": "passed"
             },
             "line": 4,
@@ -24,32 +24,62 @@
         ]
       },
       {
-        "start_timestamp": "2022-06-20T17:07:27.217Z",
-        "line": 7,
-        "name": "Adding an employee",
+        "start_timestamp": "2022-06-20T17:46:41.156Z",
+        "line": 33,
+        "name": "Adding an employee using a dynamic scenario",
         "description": "",
-        "id": "this-feature-covers-all-the-api-related-scenario;adding-an-employee",
+        "id": "this-feature-covers-all-the-api-related-scenario;adding-an-employee-using-a-dynamic-scenario",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 3000100,
+              "duration": 5378100,
               "status": "passed"
             },
-            "line": 8,
-            "name": "a request is prepared to create an employee",
+            "line": 34,
+            "name": "a request is prepared to create an employee via dynamic payload \"Jerome\",\"Bettis\",\"Abram\",\"M\",\"1972-02-16\",\"Retired\",\"Running Back\"",
             "match": {
-              "location": "APISteps.APIWorkflowSteps.a_request_is_prepared_to_create_an_employee()"
+              "arguments": [
+                {
+                  "val": "\"Jerome\"",
+                  "offset": 64
+                },
+                {
+                  "val": "\"Bettis\"",
+                  "offset": 73
+                },
+                {
+                  "val": "\"Abram\"",
+                  "offset": 82
+                },
+                {
+                  "val": "\"M\"",
+                  "offset": 90
+                },
+                {
+                  "val": "\"1972-02-16\"",
+                  "offset": 94
+                },
+                {
+                  "val": "\"Retired\"",
+                  "offset": 107
+                },
+                {
+                  "val": "\"Running Back\"",
+                  "offset": 117
+                }
+              ],
+              "location": "APISteps.APIWorkflowSteps.aRequestIsPreparedToCreateAnEmployeeViaDynamicPayload(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 215761100,
+              "duration": 210442900,
               "status": "passed"
             },
-            "line": 9,
+            "line": 35,
             "name": "a POST call is made to create an employee",
             "match": {
               "location": "APISteps.APIWorkflowSteps.a_post_call_is_made_to_create_an_employee()"
@@ -58,10 +88,10 @@
           },
           {
             "result": {
-              "duration": 27558300,
+              "duration": 26683800,
               "status": "passed"
             },
-            "line": 10,
+            "line": 36,
             "name": "the status code for the created employee is 201",
             "match": {
               "arguments": [
@@ -76,10 +106,10 @@
           },
           {
             "result": {
-              "duration": 44597300,
+              "duration": 43211300,
               "status": "passed"
             },
-            "line": 11,
+            "line": 37,
             "name": "the employee created contains key \"Message\" and value \"Employee Created\"",
             "match": {
               "arguments": [
@@ -98,10 +128,10 @@
           },
           {
             "result": {
-              "duration": 17776500,
+              "duration": 13798100,
               "status": "passed"
             },
-            "line": 12,
+            "line": 38,
             "name": "the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls",
             "match": {
               "arguments": [
@@ -117,150 +147,7 @@
         ],
         "tags": [
           {
-            "name": "@API"
-          }
-        ]
-      },
-      {
-        "line": 3,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 185693500,
-              "status": "passed"
-            },
-            "line": 4,
-            "name": "a JWT is generated",
-            "match": {
-              "location": "APISteps.GenerateTokenSteps.a_jwt_is_generated()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-06-20T17:07:29.327Z",
-        "line": 15,
-        "name": "Get the newly created employee",
-        "description": "",
-        "id": "this-feature-covers-all-the-api-related-scenario;get-the-newly-created-employee",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 4091000,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "the request is prepared to get the employee",
-            "match": {
-              "location": "APISteps.APIWorkflowSteps.the_request_is_prepared_to_get_the_employee()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 193953300,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "a GET call is made to retrieve the created employee",
-            "match": {
-              "location": "APISteps.APIWorkflowSteps.a_get_call_is_made_to_retrieve_the_created_employee()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1672200,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "the status call for this employee is 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "APISteps.APIWorkflowSteps.the_status_call_for_this_employee_is(java.lang.Integer)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 9103100,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "the employee we are getting having ID \"employee.employee_id\"  must match with the globally stored employee id",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"employee.employee_id\"",
-                  "offset": 38
-                }
-              ],
-              "location": "APISteps.APIWorkflowSteps.theEmployeeWeAreGettingHavingIDMustMatchWithTheGloballyStoredEmployeeId(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 7499900,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "the retrieved data at \"employee\" object matches the data used to create the employee having employee id \"employee.employee_id\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"employee\"",
-                  "offset": 22
-                },
-                {
-                  "val": "\"employee.employee_id\"",
-                  "offset": 104
-                }
-              ],
-              "location": "APISteps.APIWorkflowSteps.the_retrieved_data_at_object_matches_the_data_used_to_create_the_employee_having_employee_id(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "emp_firstname",
-                  "emp_lastname",
-                  "emp_middle_name",
-                  "emp_gender",
-                  "emp_birthday",
-                  "emp_status",
-                  "emp_job_title"
-                ]
-              },
-              {
-                "cells": [
-                  "Wanda",
-                  "Maximoff",
-                  "W",
-                  "Female",
-                  "1987-06-11",
-                  "Probation",
-                  "Avenger"
-                ]
-              }
-            ],
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@API"
+            "name": "@dynamic"
           }
         ]
       }

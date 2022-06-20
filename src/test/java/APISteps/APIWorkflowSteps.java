@@ -91,4 +91,17 @@ public class APIWorkflowSteps {
             }
         }
     }
+
+    @Given("a request is prepared to create an employee via JSON object")
+    public void aRequestIsPreparedToCreateAnEmployeeViaJSONObject() {
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE, APIConstants.HEADER_CONTENT_TYPE_VALUE)
+                .header(APIConstants.HEADER_AUTHORIZATION, GenerateTokenSteps.token).body(APIPayloadConstants.createEmployeePayloadViaJSON());
+    }
+
+    @Given("a request is prepared to create an employee via dynamic payload {string},{string},{string},{string},{string},{string},{string}")
+    public void aRequestIsPreparedToCreateAnEmployeeViaDynamicPayload(String firstName, String lastName, String middleName, String gender, String dob, String jobStatus, String jobTitle) {
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE,APIConstants.HEADER_CONTENT_TYPE_VALUE)
+                .header(APIConstants.HEADER_AUTHORIZATION,GenerateTokenSteps.token)
+                .body(APIPayloadConstants.createEmployeeDynamic(firstName, lastName, middleName, gender, dob, jobStatus, jobTitle));
+    }
 }

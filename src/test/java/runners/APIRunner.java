@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "APISteps",
         dryRun = false,
         monochrome = true,
-        tags = "@API",
+        tags = "@dynamic",
         plugin = {"html:target/cucumber.html","pretty","json:target/cucumber.json", "rerun:target/failed.txt"}
 )
 
